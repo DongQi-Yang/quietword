@@ -1,0 +1,112 @@
+DEFINE SCHEMA
+
+    RECORD TYPE Bookmark (
+        "___recordID"      REFERENCE QUERYABLE,
+        "___createTime"    TIMESTAMP QUERYABLE SORTABLE,
+        "___createdBy"     REFERENCE QUERYABLE,
+        "___etag"          STRING,
+        "___modTime"       TIMESTAMP QUERYABLE SORTABLE,
+        "___modifiedBy"    REFERENCE QUERYABLE,
+        "___recordID"      REFERENCE QUERYABLE,
+        "book"             STRING,
+        "chapter"          INT64,
+        "verse"            INT64,
+        "translation"      STRING,
+        "createdAt"        TIMESTAMP,
+        "modifiedAt"       TIMESTAMP,
+        GRANT WRITE TO "_creator",
+        GRANT CREATE TO "_icloud",
+        GRANT READ TO "_world"
+    );
+
+    RECORD TYPE Highlight (
+        "___recordID"      REFERENCE QUERYABLE,
+        "___createTime"    TIMESTAMP QUERYABLE SORTABLE,
+        "___createdBy"     REFERENCE QUERYABLE,
+        "___etag"          STRING,
+        "___modTime"       TIMESTAMP QUERYABLE SORTABLE,
+        "___modifiedBy"    REFERENCE QUERYABLE,
+        "book"             STRING,
+        "chapter"          INT64,
+        "verseStart"       INT64,
+        "verseEnd"         INT64,
+        "colorId"          INT64,
+        "translation"      STRING,
+        "createdAt"        TIMESTAMP,
+        "modifiedAt"       TIMESTAMP,
+        GRANT WRITE TO "_creator",
+        GRANT CREATE TO "_icloud",
+        GRANT READ TO "_world"
+    );
+
+    RECORD TYPE Note (
+        "___recordID"      REFERENCE QUERYABLE,
+        "___createTime"    TIMESTAMP QUERYABLE SORTABLE,
+        "___createdBy"     REFERENCE QUERYABLE,
+        "___etag"          STRING,
+        "___modTime"       TIMESTAMP QUERYABLE SORTABLE,
+        "___modifiedBy"    REFERENCE QUERYABLE,
+        "book"             STRING,
+        "chapter"          INT64,
+        "verseStart"       INT64,
+        "verseEnd"         INT64,
+        "text"             STRING,
+        "translation"      STRING,
+        "createdAt"        TIMESTAMP,
+        "modifiedAt"       TIMESTAMP,
+        GRANT WRITE TO "_creator",
+        GRANT CREATE TO "_icloud",
+        GRANT READ TO "_world"
+    );
+
+    RECORD TYPE Position (
+        "___recordID"      REFERENCE QUERYABLE,
+        "___createTime"    TIMESTAMP QUERYABLE SORTABLE,
+        "___createdBy"     REFERENCE QUERYABLE,
+        "___etag"          STRING,
+        "___modTime"       TIMESTAMP QUERYABLE SORTABLE,
+        "___modifiedBy"    REFERENCE QUERYABLE,
+        "kind"             STRING,
+        "translation"      STRING,
+        "voice"            STRING,
+        "book"             STRING,
+        "chapter"          INT64,
+        "verse"            INT64,
+        "offsetMs"         INT64,
+        "modifiedAt"       TIMESTAMP,
+        GRANT WRITE TO "_creator",
+        GRANT CREATE TO "_icloud",
+        GRANT READ TO "_world"
+    );
+
+    RECORD TYPE PlanEnrollment (
+        "___recordID"      REFERENCE QUERYABLE,
+        "___createTime"    TIMESTAMP QUERYABLE SORTABLE,
+        "___createdBy"     REFERENCE QUERYABLE,
+        "___etag"          STRING,
+        "___modTime"       TIMESTAMP QUERYABLE SORTABLE,
+        "___modifiedBy"    REFERENCE QUERYABLE,
+        "planId"           STRING,
+        "startedAt"        TIMESTAMP,
+        "modifiedAt"       TIMESTAMP,
+        GRANT WRITE TO "_creator",
+        GRANT CREATE TO "_icloud",
+        GRANT READ TO "_world"
+    );
+
+    RECORD TYPE PlanCheck (
+        "___recordID"      REFERENCE QUERYABLE,
+        "___createTime"    TIMESTAMP QUERYABLE SORTABLE,
+        "___createdBy"     REFERENCE QUERYABLE,
+        "___etag"          STRING,
+        "___modTime"       TIMESTAMP QUERYABLE SORTABLE,
+        "___modifiedBy"    REFERENCE QUERYABLE,
+        "enrollment"       STRING,
+        "book"             STRING,
+        "chapter"          INT64,
+        "done"             INT64,
+        "modifiedAt"       TIMESTAMP,
+        GRANT WRITE TO "_creator",
+        GRANT CREATE TO "_icloud",
+        GRANT READ TO "_world"
+    );
